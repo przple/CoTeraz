@@ -36,7 +36,7 @@ public class DaneController {
 		
 		
 		for(Whatsnow wn: wynik) {
-			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getMarkerIcon(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
+			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
 					wn.getAdress(), wn.getPhone(), wn.getType(), wn.getPlaceImage()));
 		}
 		
@@ -58,7 +58,7 @@ public class DaneController {
 		
 		
 		for(Whatsnow wn: wynik) {
-			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getMarkerIcon(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
+			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
 					wn.getAdress(), wn.getPhone(), wn.getType(), wn.getPlaceImage()));
 		}
 		
@@ -80,7 +80,7 @@ public class DaneController {
 		
 		
 		for(Whatsnow wn: wynik) {
-			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getMarkerIcon(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
+			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
 					wn.getAdress(), wn.getPhone(), wn.getType(), wn.getPlaceImage()));
 		}
 		
@@ -102,7 +102,7 @@ public class DaneController {
 		
 		
 		for(Whatsnow wn: wynik) {
-			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getMarkerIcon(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
+			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
 					wn.getAdress(), wn.getPhone(), wn.getType(), wn.getPlaceImage()));
 		}
 		
@@ -127,7 +127,7 @@ public class DaneController {
 		
 		
 		for(Whatsnow wn: wynik) {
-			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getMarkerIcon(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
+			result.add(new Dane(wn.getId(), wn.getName(), wn.getInfo(), wn.getLat(), wn.getLng(), wn.getRating(), wn.getWww(), 
 					wn.getAdress(), wn.getPhone(), wn.getType(), wn.getPlaceImage()));
 		}
 		
@@ -143,13 +143,13 @@ public class DaneController {
 		List<Dane> result = new ArrayList<>();
 		
 		
-		result.add(new Dane(1, "Cinema City", "Najnowoczesniejsze kino w £odzi", "nuda.jpg", 51.780833, 19.448461, 5, "https://www.cinema-city.pl/",
+		result.add(new Dane(1, "Cinema City", "Najnowoczesniejsze kino w £odzi", 51.780833, 19.448461, 5, "https://www.cinema-city.pl/",
 				"ul. Drewnowska 58, £ódŸ", "42 664 64 64", "nuda","cinema.jpg"));
 		
-		result.add(new Dane(2,"Sky Bowling", "Ogromna 24-torowa krêgielnia zapewni moc zabawy z dzieæmi, przyjació³mi, znajomymi z pracy", "nuda.jpg", 51.749990, 19.448772, 4, "http://sukcesja.eu/sklepy/sky-bowling",
+		result.add(new Dane(2,"Sky Bowling", "Ogromna 24-torowa krêgielnia zapewni moc zabawy z dzieæmi, przyjació³mi, znajomymi z pracy", 51.749990, 19.448772, 4, "http://sukcesja.eu/sklepy/sky-bowling",
 				"al. Politechniki 1, £ódŸ", "42 295 02 54", "nuda","skyBowling.jpg"));
 		
-		result.add(new Dane(3, "Fit Fabric", "Nowoczesna sieæ klubów fitness, gdzie ka¿dy znajdzie coœ dla siebie", "nuda.jpg", 51.781523, 19.484153, 5, "https://www.fitfabric.pl/kluby/fitfabric-matejki",
+		result.add(new Dane(3, "Fit Fabric", "Nowoczesna sieæ klubów fitness, gdzie ka¿dy znajdzie coœ dla siebie", 51.781523, 19.484153, 5, "https://www.fitfabric.pl/kluby/fitfabric-matejki",
 				"ul. Jana Matejki 3/5, £ódŸ", "505 450 068", "nuda","fit.jpg"));
 		
 		return result;

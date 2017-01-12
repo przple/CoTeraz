@@ -5,7 +5,7 @@ public class Dane {
 	private int id;
 	private String name;
 	private String info;
-	private String marker_icon;
+	//private String marker_icon;
 	private double lat;
 	private double lng;
 	private int rating;
@@ -15,13 +15,13 @@ public class Dane {
 	private String type;
 	private String place_image;
 
-	public Dane(int id, String name, String info, String marker_icon, double lat, double lng, int rating, String www,
+	public Dane(int id, String name, String info, double lat, double lng, int rating, String www,
 			String adress, String phone, String type, String place_image) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.info = info;
-		this.marker_icon = marker_icon;
+		//this.marker_icon = marker_icon;
 		this.lat = lat;
 		this.lng = lng;
 		this.rating = rating;
@@ -56,13 +56,13 @@ public class Dane {
 		this.info = info;
 	}
 
-	public String getMarker_icon() {
+	/*public String getMarker_icon() {
 		return marker_icon;
 	}
 
 	public void setMarker_icon(String marker_icon) {
 		this.marker_icon = marker_icon;
-	}
+	}*/
 
 	public double getLat() {
 		return lat;
