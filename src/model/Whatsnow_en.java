@@ -4,16 +4,15 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- * The persistent class for the whatsnow database table.
+ * The persistent class for the Whatsnow_en database table.
  * 
  */
 @Entity
-@NamedQueries(value = { @NamedQuery(name = "Whatsnow.findAll", query = "SELECT w FROM Whatsnow w"),
-						@NamedQuery(name = "Whatsnow.findByType", query = "SELECT w FROM Whatsnow w WHERE  w.type=:type"),
-						@NamedQuery(name = "Whatsnow.findById", query = "SELECT w FROM Whatsnow w WHERE  w.id=:id")
+@NamedQueries(value = { @NamedQuery(name = "Whatsnow_en.findAll", query = "SELECT w FROM Whatsnow_en w"),
+						@NamedQuery(name = "Whatsnow_en.findByType", query = "SELECT w FROM Whatsnow_en w WHERE  w.type=:type"),
+						@NamedQuery(name = "Whatsnow_en.findById", query = "SELECT w FROM Whatsnow_en w WHERE  w.id=:id")
 })
- 
-public class Whatsnow implements Serializable {
+public class Whatsnow_en implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -43,11 +42,11 @@ public class Whatsnow implements Serializable {
 	@Column(name = "place_image ")
 	private String placeImage;
 
-	public Whatsnow() {
+	public Whatsnow_en() {
 	}
 
 	// ============
-	public Whatsnow(int id, String name, String info, String markerIcon, double lat, double lng, int rating, String www,
+	public Whatsnow_en(int id, String name, String info, String markerIcon, double lat, double lng, int rating, String www,
 			String adress, String phone, String type, String placeImage) {
 		super();
 		this.id = id;
