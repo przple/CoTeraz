@@ -69,6 +69,28 @@ public class WhatsnowController {
 		return wynik;
 	}
 	
+	@RequestMapping(path="/repair", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public List<Whatsnow> getRepair() {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		
+		List<Whatsnow> wynik = entityManager.createNamedQuery("Whatsnow.findByType").setParameter("type", "repair").getResultList();
+				
+		entityManager.close();
+		
+		return wynik;
+	}
+	
+	@RequestMapping(path="/money", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public List<Whatsnow> getMoney() {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		
+		List<Whatsnow> wynik = entityManager.createNamedQuery("Whatsnow.findByType").setParameter("type", "money").getResultList();
+				
+		entityManager.close();
+		
+		return wynik;
+	}
+	
 	// =======================================
 	
 	@RequestMapping(path="/all", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
