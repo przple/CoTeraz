@@ -2,7 +2,6 @@ package controllers;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -15,12 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 
 import model.Response;
 import model.User;
-import model.Whatsnow;
-import model.Whatsnow_en;
 
 @RestController
 public class UserController {
@@ -30,45 +26,42 @@ public class UserController {
 
 	@RequestMapping(path="/user", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<User> getUser() {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("CoTerazJPA");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
-		List<User> result = new ArrayList<>();
-		
-		List<User> wynik = entityManager.createNamedQuery("User.findAll").getResultList();
-		
-		
-		for(User wn: wynik) {
-			result.add(new User(wn.getID(), wn.getLogin(), wn.getPassword(), wn.getType()));
-		}
+		List<User> users = entityManager.createNamedQuery("User.findAll").getResultList();
 		
 		
 		entityManager.close();
-		entityManagerFactory.close();
 		
-		return result;		
+		return users;		
 	}
 	
 	
-	@RequestMapping(path="/user/{login}/{password}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE, method=RequestMethod.GET)
-	public List<User> getUserParam(@PathVariable String login, @PathVariable String password) {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("CoTerazJPA");
+	@RequestMapping(path="/user/{login}/{password}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE, method=RequestMethod.POST)
+	public Response getUserParam(@PathVariable String login, @PathVariable String password) {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		Response response = new Response();
 		
-		List<User> result = new ArrayList<>();
 		
 		List<User> wynik = entityManager.createNamedQuery("User.singIn").setParameter("login", login).setParameter("password", password).getResultList();
 		
-		
-		for(User wn: wynik) {
-			result.add(new User(wn.getID(), wn.getLogin(), wn.getPassword(), wn.getType()));
+		if(!wynik.isEmpty()) {
+			for(User u: wynik) {
+				if(u.getLogin().equals(login.toLowerCase()) && u.getPassword().equals(password))
+					response.setResponse("Succes");
+			}
+		} else {
+			response.setResponse("Failed");
 		}
 		
 		
-		entityManager.close();
-		entityManagerFactory.close();
 		
-		return result;		
+		
+				
+		
+		entityManager.close();
+		
+		return response;		
 	}
 	
 	

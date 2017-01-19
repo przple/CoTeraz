@@ -20,15 +20,13 @@ public class ImagesController {
 	
 	@RequestMapping(path="/images", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<User> getAllImages() {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("CoTerazJPA");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
-		List<User> wynik = entityManager.createNamedQuery("Images.findAll").getResultList();		
+		List<User> images = entityManager.createNamedQuery("Images.findAll").getResultList();		
 		
 		entityManager.close();
-		entityManagerFactory.close();
 		
-		return wynik;		
+		return images;		
 	}
 	
 }
