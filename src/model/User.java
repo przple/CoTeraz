@@ -21,7 +21,8 @@ public class User implements Serializable {
 	private String password;
 	private String type;
 	
-	
+
+
 	public User() {
 	}
 
@@ -41,6 +42,7 @@ public class User implements Serializable {
 		this.password = password;
 		this.type = type;
 	}
+	
 	
 	
 	public int getID() {

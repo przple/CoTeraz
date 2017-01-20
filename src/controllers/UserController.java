@@ -2,6 +2,7 @@ package controllers;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -37,6 +38,18 @@ public class UserController {
 	}
 	
 	
+	@RequestMapping(path="/user/{login}/{password}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE, method=RequestMethod.GET)
+	public List<User> getUserBy(@PathVariable String login, @PathVariable String password) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		
+		
+		List<User> wynik = entityManager.createNamedQuery("User.singIn").setParameter("login", login).setParameter("password", password).getResultList();		
+		
+		entityManager.close();
+		
+		return wynik;		
+	}
+	
 	@RequestMapping(path="/user/{login}/{password}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE, method=RequestMethod.POST)
 	public Response getUserParam(@PathVariable String login, @PathVariable String password) {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -54,10 +67,6 @@ public class UserController {
 			response.setResponse("Failed");
 		}
 		
-		
-		
-		
-				
 		
 		entityManager.close();
 		
