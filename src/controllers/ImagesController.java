@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import model.User;
@@ -18,7 +19,7 @@ public class ImagesController {
 	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("CoTerazJPA");
 	EntityManager entityManager = entityManagerFactory.createEntityManager();
 	
-	@RequestMapping(path="/images", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(path="/images", produces=MediaType.APPLICATION_JSON_UTF8_VALUE, method=RequestMethod.GET)
 	public List<User> getAllImages() {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
